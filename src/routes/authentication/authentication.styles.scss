@@ -1,0 +1,33 @@
+.authentication-container {
+    display: flex;
+    width: 900px;
+    justify-content: space-between;
+    margin: 30px auto;
+    }
+
+//For Medium
+@mixin md {
+    @media screen and (max-width: (768px)) {
+      @content;
+    }
+}
+
+@include md {
+    .authentication-container {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        align-items: center;
+        margin: 30px auto;
+
+        .signup{
+            margin-top: 50px;
+        }
+
+        hr{
+            width: 300px;
+            margin-top: 80px;
+            border: 2px solid black;
+        }
+}
+}
