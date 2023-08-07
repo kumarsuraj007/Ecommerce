@@ -14,7 +14,7 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -39,7 +39,7 @@ function SignUp() {
       <h2>Don't have an account?</h2>
       <span>Sign up With your Email and Password!</span>
       <form action="" onSubmit={handleSubmit}>
-        <FormInput
+        <FormInput 
         label="Display Name"
           type="text"
           required
@@ -60,7 +60,7 @@ function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <FormInput
+        <FormInput 
           label="Confirm Password"
           type="password"
           required

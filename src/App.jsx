@@ -2,12 +2,8 @@ import React from 'react'
 import Home from './routes/home/home.component';
 import Navigation from './routes/navigation/navigation.component';
 import Authentication from './routes/authentication/authentication.component.jsx';
+import Shop from './routes/shop/shop.component';
 import { Routes, Route } from 'react-router-dom';
-
-
-function Shop () {
-  return <h2>Hello shop</h2>
-}
 
 function App() {
   return (
@@ -21,4 +17,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

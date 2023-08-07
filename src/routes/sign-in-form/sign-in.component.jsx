@@ -1,29 +1,27 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   userAuthSignInWithEmailAndPassword,
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.js";
 import FormInput from '../../components/form-input/form-input.component.jsx';
 import Button from "../../components/button/button.component.jsx";
 import './sign-in.styles.scss'
 
-function SignIn() {
+function SignIn () {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const logInWithGoogle = async () => {
-    const {user} = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user)
+    await signInWithGooglePopup();
     }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     try {
-      const response = await userAuthSignInWithEmailAndPassword(email, password);
-      console.log(response)
+      const {user} = await userAuthSignInWithEmailAndPassword(email, password);
     } catch (error) {
       switch (error.code) {
         case "auth/user-not-found":
