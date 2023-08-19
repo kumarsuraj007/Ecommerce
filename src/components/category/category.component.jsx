@@ -1,8 +1,8 @@
-import {useContext, useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom'
-import { CategoriesContext } from '../../contexts/categories.context'
+import {useContext, useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
+import { CategoriesContext } from '../../contexts/categories.context';
 import ProductCard from '../products-card/product-card.component';
-import './category.styles.scss'
+import './category.styles.scss';
 
 function Category() {
     const {category} = useParams();
@@ -11,19 +11,15 @@ function Category() {
 
     useEffect(() => {
         setProducts(categoriesMap[category])
-    }, [category], [categoriesMap]);
+    }, [category, categoriesMap])
 
     return (
         <div className='category-container'>
             {
-                products && products.map((product) => 
-                    <ProductCard key={product.id} product={product}/>
-                )
+                products && products?.map((product) => <ProductCard key={product.id} product={product}/>)
             }
         </div>
     )
 }
 
-
-
-export default Category
+export default Category;
